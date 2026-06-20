@@ -5,41 +5,41 @@ import java.sql.DriverManager;
 
 public class DBConnection {
 
-    private static final String URL =
-            "jdbc:mysql://localhost:3306/librarymanagamentsystem";
+        private static final String URL =
+                "jdbc:mysql://localhost:3306/librarymanagamentsystem";
 
-    private static final String USER =
-            "root";
+        private static final String USER =
+                "root";
 
-    private static final String PASSWORD =
-            "";
+        private static final String PASSWORD =
+                "";
 
-    public static Connection getConnection() {
+        public static Connection getConnection() {
 
-        Connection conn = null;
+                Connection conn = null;
 
-        try {
+                try {
 
-            Class.forName(
-                    "com.mysql.cj.jdbc.Driver");
+                Class.forName(
+                        "com.mysql.cj.jdbc.Driver");
 
-            conn =
-                    DriverManager.getConnection(
-                            URL,
-                            USER,
-                            PASSWORD);
+                conn =
+                        DriverManager.getConnection(
+                                URL,
+                                USER,
+                                PASSWORD);
 
-            System.out.println(
-                    "===== DATABASE CONNECTED =====");
+                System.out.println(
+                        "===== DATABASE CONNECTED =====");
 
-        } catch (Exception e) {
+                } catch (Exception e) {
 
-            System.out.println(
-                    "===== DATABASE GAGAL TERHUBUNG =====");
+                System.out.println(
+                        "===== DATABASE GAGAL TERHUBUNG =====");
 
-            e.printStackTrace();
+                e.printStackTrace();
+                }
+
+                return conn;
         }
-
-        return conn;
-    }
 }
